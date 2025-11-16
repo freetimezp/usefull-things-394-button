@@ -9,3 +9,67 @@
 a {
     text-decoration: none;
 }
+
+.btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 150px;
+    line-height: 150px;
+    text-align: center;
+    background: #206bff;
+    color: #fff;
+    font-size: 50px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    box-shadow: 0 15px 25px rgba(32, 107, 255, 0.2);
+    border: 2px solid #206bff;
+    transition: 0.5s;
+}
+
+.btn:hover {
+    background: #fff;
+    text-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 15px 25px rgba(32, 107, 255, 0.5);
+}
+
+a::before,
+a::after {
+    content: "";
+    position: absolute;
+    width: 54%;
+    height: 100%;
+    background: #206bff;
+    z-index: -1;
+    opacity: 0;
+}
+
+a:hover::before {
+    opacity: 1;
+    top: 15px;
+    left: -15px;
+    box-shadow: 10px 4px 10px rgba(0, 0, 0, 0.2);
+    animation: animate 2s linear infinite;
+}
+a:hover::after {
+    opacity: 1;
+    top: -15px;
+    right: -15px;
+    box-shadow: -10px 4px 10px rgba(0, 0, 0, 0.2);
+    animation: animate 2s linear infinite;
+    animation-delay: -1s;
+}
+
+@keyframes animate {
+    0% {
+        top: 20px;
+    }
+    50% {
+        top: -20px;
+    }
+    100% {
+        top: 20px;
+    }
+}
